@@ -33,6 +33,11 @@ def load_summarization_model():
     model = BartForConditionalGeneration.from_pretrained("sshleifer/distilbart-cnn-12-6")
     return tokenizer, model
 
+
+
+whisper_model = load_whisper_model()
+tokenizer, bart_model = load_summarization_model()
+
 # ============================
 # DOWNLOAD AUDIO
 # ============================
