@@ -8,6 +8,14 @@ This tool extracts audio from any YouTube video, transcribes it using high-speed
 
 ---
 
+## ⚠️ Caution
+
+> This app uses heavy transformer models for transcription and summarization.  
+> ⏳ **It might take time** depending on video length, model size, and server resources.  
+> 💤 For best results, avoid very long videos and retry if a timeout occurs.
+
+---
+
 ## 🚀 Features
 
 - 🔗 Input any YouTube video link
