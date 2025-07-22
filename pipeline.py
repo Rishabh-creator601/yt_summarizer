@@ -111,8 +111,6 @@ def summarize_text(text, tokenizer, model, max_len=500, min_len=150):
 
 if url:
     with st.spinner("Downloading & Processing..."):
-        whisper_model = load_whisper_model()
-        tokenizer, bart_model = load_summarization_model()
 
         audio_path = download_audio_with_ytdlp(url)
         transcript = audio_to_text(audio_path, whisper_model)
