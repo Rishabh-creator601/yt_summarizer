@@ -3,7 +3,7 @@
 **Get YouTube video transcripts and summaries with one click!**  
 This tool extracts audio from any YouTube video, transcribes it using high-speed Whisper models, and summarizes the content with a transformer-based NLP model.
 
-🔗 **Try it live**: [ytsummaryweb.streamlit.app](https://ytsummaryweb.streamlit.app)
+🔗 **Try it live**: [ytsummaryweb.streamlit.app](https://ytsummaryweb.streamlit.app) <br />
 📊 **Kaggle Notebook**: [View on Kaggle](https://www.kaggle.com/code/rishabh2007/youtube-transcript-summarizer-with-distilbert)
 
 ---
