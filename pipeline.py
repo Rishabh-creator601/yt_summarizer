@@ -1,5 +1,5 @@
 import streamlit as st
-import subprocess, whisper, tqdm, os, math, warnings, torch
+import subprocess, whisper, tqdm, os, math, warnings, torch,ctranslate2
 from faster_whisper import WhisperModel
 from yt_dlp import YoutubeDL
 from transformers import BartTokenizer, BartForConditionalGeneration
@@ -22,9 +22,12 @@ holder = st.empty()
 @st.cache_resource
 def load_whisper_model():
     if torch.cuda.is_available():
-        model = WhisperModel("tiny.en", device="cuda", compute_type="float16")
+        compute_type_ = "float32" if "float32" in list(ctranslate2.get_supported_compute_types()) else "float16"
+        model = WhisperModel("tiny.en", device="cuda", compute_type=compute_type_)
+        print("Using GPU for Whisper model")
     else:
         model = WhisperModel("tiny.en", device="cpu", compute_type="int8")
+        print("Using CPU for Whisper model")
     return model
 
 @st.cache_resource
@@ -37,6 +40,8 @@ def load_summarization_model():
 
 whisper_model = load_whisper_model()
 tokenizer, bart_model = load_summarization_model()
+
+print("Both models loaded successfully!")
 
 # ============================
 # DOWNLOAD AUDIO
